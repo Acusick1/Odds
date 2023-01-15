@@ -11,7 +11,7 @@ import sys
 import json
 import pathlib
 from aiohttp import ClientSession
-from gen import get_path, dict2csv, flatten_dict
+from utils.gen import get_path, dict2csv, flatten_dict
 
 logging.basicConfig(
     format="%(asctime)s %(levelname)s:%(name)s: %(message)s",
@@ -151,7 +151,7 @@ def get_urls(leagues: (list, int), years: (list, str)) -> list:
 
 
 def var2dict(data):
-    """Function to parse javascript variable to dict format. Potentially specific to Understat which uses json.parse and
+    """Function to parse javascript variable to dict format. Potentially specific to understat which uses json.parse and
     hex codes to generate data"""
     # Hack to get rid of brackets and leading apostrophe
     # Bigger hack to do this encoding nonsense

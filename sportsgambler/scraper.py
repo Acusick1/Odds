@@ -2,8 +2,8 @@ import time
 import re
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import TimeoutException, WebDriverException, NoSuchElementException
-from gen import get_url
+from selenium.common.exceptions import NoSuchElementException
+from utils.gen import get_url
 
 # RE_SPAN = re.compile(r">([a-z]*)<")
 RE_SPAN = re.compile(r">(.*?)<")

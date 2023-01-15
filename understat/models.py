@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import cross_val_score, train_test_split
-from Understat.analyse import get_team_history, get_teams_in_league
+from understat.analyse import get_team_history, get_teams_in_league
 
 
 def correlation_test():

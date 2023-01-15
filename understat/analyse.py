@@ -1,7 +1,7 @@
 import os
 import pathlib
 from typing import List
-from gen import get_path, get_dirs, get_csv_data, str2num, csv2pd
+from utils.gen import get_path, get_dirs, get_csv_data, str2num, csv2pd
 
 HERE = str(pathlib.Path(__file__).parent)
 LEAGUES = get_dirs(HERE)
