@@ -29,10 +29,13 @@ if __name__ == "__main__":
     odds_arr = np.max(all_odds, axis=0)
 
     prob_arr = odds2probs(odds_arr)
-    stake_arr = stake * prob_arr/prob_arr.sum()
-    stake_dict = [{"book": book_id, "stake": s} for book_id, s in zip(ids, stake_arr)]
+    # stake_arr = np.ceil(stake * prob_arr / prob_arr.sum())
+    stake_arr = (stake * prob_arr/prob_arr.sum()).round(1)
+    return_arr = (stake_arr * odds_arr) + stake_arr
+    stake_dict = [{"book": book_id, "stake": s, "return": r}
+                  for book_id, s, r in zip(ids, stake_arr, return_arr)]
 
     print("Summed probabilities", prob_arr.sum())
     print("Probabilities: ", prob_arr)
     print("Stakes: ", stake_dict)
-    print("Returns: ", min((stake_arr * odds_arr) + stake_arr))
+    print("Stake/Returns: ", f"{sum(stake_arr)}/{min(return_arr)}")
